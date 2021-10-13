@@ -41,16 +41,26 @@ public class CarMove : MonoBehaviour
                 }
             }
             
-            transform.Translate(Vector3.forward * Velocity * Time.deltaTime);
-            if(dy != 0)
+            
+            if(dy > 0)
             {
                 float angle = dx * Rotation * Time.deltaTime;
                 transform.Rotate(new Vector3(0, angle, 0));
             }
+            if (dy < 0)
+            {
+                float angle = dx * -Rotation * Time.deltaTime;
+                transform.Rotate(new Vector3(0, angle, 0));
+            }
+
+        }
+        else
+        {
             
 
         }
-        
+        transform.Translate(Vector3.forward * Velocity * Time.deltaTime);
+
     }
 
     void OnCollisionEnter(Collision collision)
