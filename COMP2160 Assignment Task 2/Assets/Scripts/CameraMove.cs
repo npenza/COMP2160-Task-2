@@ -20,7 +20,7 @@ public class CameraMove : MonoBehaviour
     {
         float dx = Input.GetAxis(InputAxes.Horizontal);
         CarMove Car = GameObject.Find("Car").GetComponent<CarMove>();
-        float Velocity = Car.Velocity;
+        float Velocity = 3;
         NewPosition = transform.localPosition;
         NewPosition.z = CameraStartPosition.z - Velocity/5;
         
