@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraPivot : MonoBehaviour
 {
     public GameObject Car;
+    public float Speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +16,6 @@ public class CameraPivot : MonoBehaviour
     void Update()
     {
         transform.position = Car.transform.position;
-        
+        transform.rotation = Quaternion.Lerp(transform.rotation, Car.transform.rotation, Time.time * Speed);
     }
 }

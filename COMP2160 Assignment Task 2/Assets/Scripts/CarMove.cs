@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CarMove : MonoBehaviour
 {
+    public Rigidbody rb;
     public float Velocity;
     public float Rotation;
     private bool Grounded;
@@ -11,7 +12,7 @@ public class CarMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -56,10 +57,12 @@ public class CarMove : MonoBehaviour
         }
         else
         {
+            
 
 
         }
-        transform.Translate(Vector3.forward * Velocity * Time.deltaTime);
+        
+        rb.transform.Translate(Vector3.forward * Velocity * Time.deltaTime);
 
     }
 
