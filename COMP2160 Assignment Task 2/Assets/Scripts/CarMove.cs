@@ -68,17 +68,19 @@ public class CarMove : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        Grounded = true;
         if (collision.gameObject.tag == "Terrain")
         {
-            Grounded = true;
+            
         }
 
     }
     private void OnCollisionExit(Collision collision)
     {
+        Grounded = false;
         if (collision.gameObject.tag == "Terrain")
         {
-            Grounded = false;
+            
         }
     }
 
