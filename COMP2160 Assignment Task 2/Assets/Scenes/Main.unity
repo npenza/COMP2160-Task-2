@@ -331,7 +331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Car: {fileID: 75220957}
-  Speed: 0.005
+  TurnSpeed: 0.004
 --- !u!4 &551726775
 Transform:
   m_ObjectHideFlags: 0
@@ -621,6 +621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
+  Car: {fileID: 0}
 --- !u!850595691 &1028571013
 LightingSettings:
   m_ObjectHideFlags: 0
