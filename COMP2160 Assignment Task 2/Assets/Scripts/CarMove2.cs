@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CarMove : MonoBehaviour
+public class CarMove2 : MonoBehaviour
 {
     public Rigidbody rb;
     public float Velocity;
@@ -18,11 +18,10 @@ public class CarMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float dx = Input.GetAxis(InputAxes.Horizontal);
-        float dy = Input.GetAxis(InputAxes.Vertical);
-        if (Physics.Raycast(transform.position, -1 * transform.up, 3))
+        if (Grounded)
         {
-            
+            float dx = Input.GetAxis(InputAxes.Horizontal);
+            float dy = Input.GetAxis(InputAxes.Vertical);
             if (dy != 0)
             {
                 if (Velocity < MaxSpeed && Velocity > -MaxSpeed)
@@ -58,14 +57,31 @@ public class CarMove : MonoBehaviour
         }
         else
         {
-            
+
 
 
         }
 
         rb.transform.Translate(Vector3.forward * Velocity * Time.deltaTime);
-        
 
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        Grounded = true;
+        if (collision.gameObject.tag == "Terrain")
+        {
+
+        }
+
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        Grounded = false;
+        if (collision.gameObject.tag == "Terrain")
+        {
+
+        }
     }
 
 }
