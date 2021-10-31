@@ -18,6 +18,10 @@ public class CarMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(transform.position.y < 2)
+        {
+            transform.position = new Vector3(transform.position.x, 2, transform.position.z);
+        }
         float dx = Input.GetAxis(InputAxes.Horizontal);
         float dy = Input.GetAxis(InputAxes.Vertical);
         if (Physics.Raycast(transform.position, -1 * transform.up, 3))
