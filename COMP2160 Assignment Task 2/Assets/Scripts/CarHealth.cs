@@ -5,15 +5,22 @@ using UnityEngine;
 public class CarHealth : MonoBehaviour
 {
 
-    public int CurHealth;
-    private int curHealth = 100;
+    public int CurHealth = 100;
+    private int curHealth;
+    public GameObject smoke;
     void Start()
     {
-        CurHealth = curHealth;
+        smoke = GameObject.Find("Smoke");
+        smoke.SetActive(false);
     }
 
     void Update()
+
     {
+        if (CurHealth <= 20)
+        {
+            smoke.SetActive(true);
+        }
     }
 
     public void onCollision()
