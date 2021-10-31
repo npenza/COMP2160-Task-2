@@ -9,12 +9,11 @@ public class CarHealth : MonoBehaviour
     private int curHealth = 100;
     void Start()
     {
-
+        CurHealth = curHealth;
     }
 
     void Update()
     {
-
     }
 
     public void onCollision()
