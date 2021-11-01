@@ -21,9 +21,16 @@ public class CarMove : MonoBehaviour
         if(transform.position.y < 2)
         {
             transform.position = new Vector3(transform.position.x, 2, transform.position.z);
+            
         }
         float dx = Input.GetAxis(InputAxes.Horizontal);
         float dy = Input.GetAxis(InputAxes.Vertical);
+        float r = Input.GetAxis(InputAxes.Respawn);
+        if(r > 0)
+        {
+            transform.position = new Vector3(transform.position.x, 15, transform.position.z);
+            transform.rotation = new Quaternion(0, 0, 0, 0);
+        }
         if (Physics.Raycast(transform.position, -1 * transform.up, 3))
         {
             

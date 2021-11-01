@@ -6,21 +6,33 @@ public class Checkpoint : MonoBehaviour
 {
     public Material Active;
     public Material Inactive;
-    public bool Check;
-    public bool Used = false;
+    public GameObject NextCheckpoint;
+    public bool Check = false;
 
+    private void Start()
+    {
+        
+    }
     // Update is called once per frame
     void Update()
     {
-        if (Check && !Used)
+        Renderer Rend = GetComponent<Renderer>();
+        if (Check == true)
         {
-            transform.GetComponent<Renderer>().material = Active;
+            Rend.material = Active;
         }
         else
         {
-            transform.GetComponent<Renderer>().material = Inactive;
-            Check = false;
+            Rend.material = Inactive;
         }
         
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("car"))
+        {
+            Check = false;
+            NextCheckpoint.GetComponent<Checkpoint>().Check = true;
+        }
     }
 }
