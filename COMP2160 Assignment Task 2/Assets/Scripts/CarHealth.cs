@@ -7,6 +7,9 @@ public class CarHealth : MonoBehaviour
 
     public int CurHealth = 100;
     public GameObject smoke;
+    private float timer;
+    private int damageCount;
+    public UIManager uiScript;
     void Start()
     {
         smoke = GameObject.Find("Smoke");
@@ -24,7 +27,13 @@ public class CarHealth : MonoBehaviour
 
     public void onCollision()
     {
+
+
         CurHealth = CurHealth - 5;
+        uiScript.updateScrollbar();
+
+
+
         Debug.Log(CurHealth);
     }
 
