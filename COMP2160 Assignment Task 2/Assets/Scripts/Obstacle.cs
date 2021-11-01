@@ -9,13 +9,15 @@ public class Obstacle : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        Debug.Log("col");
-        if (col.gameObject.CompareTag("car") == true)
-        {
-            GameObject car = GameObject.Find("Car");
-            CarHealth carHealthScript = car.GetComponent<CarHealth>();
-            carHealthScript.onCollision();
-        }
+        // Debug.Log("col");
+        // if (col.gameObject.CompareTag("car") == true)
+        // {
+        //     Debug.Log("car found");
+
+        GameObject car = GameObject.Find("Car");
+        CarHealth carHealthScript = car.GetComponent<CarHealth>();
+        carHealthScript.onCollision();
+        // }
     }
 
 

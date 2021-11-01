@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 4574813}
   - component: {fileID: 4574814}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: TestObstacle
   m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,7 +152,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4574808}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -214,7 +214,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4574808}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 393, y: 20.2, z: 498.3}
+  m_LocalPosition: {x: 731.7, y: 20.2, z: 650.2}
   m_LocalScale: {x: 17.274, y: 17.274, z: 17.274}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6941,7 +6941,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 4780bac26e7c74148916a22b0cdc0b81,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 50.9
+      value: 51.2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4780bac26e7c74148916a22b0cdc0b81,
         type: 3}
@@ -7094,6 +7094,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2033622204986509768, guid: 4780bac26e7c74148916a22b0cdc0b81, type: 3}
+--- !u!114 &1625542448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625542446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f036b7f0e7e88b9409134248eee4b26a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1625542450 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4780bac26e7c74148916a22b0cdc0b81,
@@ -14537,7 +14549,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 240a8942b2025724a8cf3ab4e31effa1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.3
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 240a8942b2025724a8cf3ab4e31effa1,
         type: 3}

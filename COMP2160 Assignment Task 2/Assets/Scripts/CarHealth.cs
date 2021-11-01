@@ -6,7 +6,6 @@ public class CarHealth : MonoBehaviour
 {
 
     public int CurHealth = 100;
-    private int curHealth;
     public GameObject smoke;
     void Start()
     {
@@ -25,13 +24,13 @@ public class CarHealth : MonoBehaviour
 
     public void onCollision()
     {
-        curHealth = curHealth - 5;
-        Debug.Log(curHealth);
+        CurHealth = CurHealth - 5;
+        Debug.Log(CurHealth);
     }
 
     int UpdateHealth()
     {
-        CurHealth = curHealth;
+        // CurHealth = curHealth;
         return CurHealth;
     }
 }
