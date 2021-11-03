@@ -29,6 +29,7 @@ public class CarHealth : MonoBehaviour
     {
 
 
+
         CurHealth = CurHealth - 5;
         uiScript.updateScrollbar();
 

@@ -6,18 +6,30 @@ public class Obstacle : MonoBehaviour
 {
     // Start is called before the first frame update
 
-
+    private int collideCount;
     void OnTriggerEnter(Collider col)
     {
-        // Debug.Log("col");
-        // if (col.gameObject.CompareTag("car") == true)
-        // {
-        //     Debug.Log("car found");
 
-        GameObject car = GameObject.Find("Car");
-        CarHealth carHealthScript = car.GetComponent<CarHealth>();
-        carHealthScript.onCollision();
-        // }
+        if (collideCount == 0)
+        {
+            GameObject car = GameObject.Find("Car");
+            CarHealth carHealthScript = car.GetComponent<CarHealth>();
+            carHealthScript.onCollision();
+            collideCount = 1;
+        }
+
+
+    }
+
+    void OnTriggerExit(Collider col)
+    {
+
+        if (collideCount == 1)
+        {
+            collideCount = 0;
+        }
+
+
     }
 
 

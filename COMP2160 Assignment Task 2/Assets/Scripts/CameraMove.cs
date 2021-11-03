@@ -13,13 +13,14 @@ public class CameraMove : MonoBehaviour
     {
         CameraStartPosition = transform.localPosition;
         CameraStartRotation = transform.localRotation;
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
-        
+
     }
+
 }
