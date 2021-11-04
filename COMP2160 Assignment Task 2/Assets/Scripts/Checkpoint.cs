@@ -10,6 +10,7 @@ public class Checkpoint : MonoBehaviour
     public GameManager gManager;
     public GameObject NextCheckpoint;
     public bool Check = false;
+    public float ActiveTime;
 
     private void Start()
     {
@@ -26,6 +27,7 @@ public class Checkpoint : MonoBehaviour
         else
         {
             Rend.material = Inactive;
+            
         }
 
     }
@@ -34,9 +36,8 @@ public class Checkpoint : MonoBehaviour
         if (other.CompareTag("car"))
         {
             Check = false;
-            // checkPointTime = gManager.timerTotalTime;
-            // checkPointTime = 4;
             NextCheckpoint.GetComponent<Checkpoint>().Check = true;
+            checkPointTime = gManager.GetComponent<GameManager>().timerTotalTime;
         }
     }
 }
