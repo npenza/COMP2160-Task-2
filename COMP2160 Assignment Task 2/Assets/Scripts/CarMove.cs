@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class CarMove : MonoBehaviour
 {
-    public Rigidbody rb;
+    public Rigidbody Rb;
     public float Velocity;
     public float Rotation;
-    private bool Grounded;
     public float MaxSpeed;
-    public GameManager gameManager;
+    public GameManager GameManager;
 
     private int cpCollect;
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        Rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -77,7 +76,7 @@ public class CarMove : MonoBehaviour
 
         }
 
-        rb.transform.Translate(Vector3.forward * Velocity * Time.deltaTime);
+        Rb.transform.Translate(Vector3.forward * Velocity * Time.deltaTime);
 
 
     }
@@ -97,7 +96,7 @@ public class CarMove : MonoBehaviour
             if (cpCollect == 0)
             {
 
-                gameManager.checkPointCollected();
+                GameManager.checkPointCollected();
                 cpCollect = 1;
 
             }

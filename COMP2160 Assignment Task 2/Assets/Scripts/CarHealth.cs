@@ -6,14 +6,12 @@ public class CarHealth : MonoBehaviour
 {
 
     public int CurHealth = 100;
-    public GameObject smoke;
-    private float timer;
-    private int damageCount;
-    public UIManager uiScript;
+    public GameObject Smoke;
+    public UIManager UiScript;
     void Start()
     {
-        smoke = GameObject.Find("Smoke");
-        smoke.SetActive(false);
+        Smoke = GameObject.Find("Smoke");
+        Smoke.SetActive(false);
     }
 
     void Update()
@@ -21,7 +19,7 @@ public class CarHealth : MonoBehaviour
     {
         if (CurHealth <= 20)
         {
-            smoke.SetActive(true);
+            Smoke.SetActive(true);
         }
     }
 
@@ -31,7 +29,7 @@ public class CarHealth : MonoBehaviour
 
 
         CurHealth = CurHealth - 5;
-        uiScript.updateScrollbar();
+        UiScript.updateScrollbar();
 
 
 

@@ -7,11 +7,7 @@ public class CameraPivot : MonoBehaviour
     public GameObject Car;
     private float CarVelocity;
     public float TurnSpeed;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    
 
     // Update is called once per frame
     void Update()

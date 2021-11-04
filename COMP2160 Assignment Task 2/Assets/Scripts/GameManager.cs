@@ -7,36 +7,36 @@ using UnityEngine.Analytics;
 public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject gameOverWinCanvas;
-    public GameObject player;
-    public CarHealth healthScript;
-    public float timerTotalTime;
-    public int checkpointsCollected;
-    public Vector3 playerPosition;
-    public int playerHealth;
+    public GameObject GameOverWinCanvas;
+    public GameObject Player;
+    public CarHealth HealthScript;
+    public float TimerTotalTime;
+    public int CheckpointsCollected;
+    public Vector3 PlayerPosition;
+    public int PlayerHealth;
 
-    public bool gameState;
+    public bool GameState;
 
     void Start()
     {
-        gameState = false;
+        GameState = false;
         AnalyticsEvent.GameStart();
-        healthScript = player.GetComponent<CarHealth>();
+        HealthScript = Player.GetComponent<CarHealth>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        playerHealth = healthScript.CurHealth;
-        timerTotalTime += Time.deltaTime;
-        playerPosition = player.transform.position;
+        PlayerHealth = HealthScript.CurHealth;
+        TimerTotalTime += Time.deltaTime;
+        PlayerPosition = Player.transform.position;
 
-        if (playerHealth <= 0)
+        if (PlayerHealth <= 0)
         {
             GameOver();
         }
 
-        if (checkpointsCollected == 11)
+        if (CheckpointsCollected == 11)
         {
             GameOver(true);
         }
@@ -44,35 +44,35 @@ public class GameManager : MonoBehaviour
 
     public void checkPointCollected()
     {
-        checkpointsCollected++;
+        CheckpointsCollected++;
         Analytics.CustomEvent("Checkpoint", new Dictionary<string, object>{
-                {"Checkpoint Number", checkpointsCollected },
-                {"Time Played", timerTotalTime },
-                {"Player Health", playerHealth }
+                {"Checkpoint Number", CheckpointsCollected },
+                {"Time Played", TimerTotalTime },
+                {"Player Health", PlayerHealth }
             });
     }
 
     public void GameOver(bool win)
     {
-        playerPosition = player.transform.position;
+        PlayerPosition = Player.transform.position;
 
-        gameOverWinCanvas.SetActive(true);
+        GameOverWinCanvas.SetActive(true);
 
 
-        if (gameState == false)
+        if (GameState == false)
         {
             AnalyticsEvent.GameOver();
 
             Analytics.CustomEvent("Game Win", new Dictionary<string, object>{
-                {"Checkpoints Collected", checkpointsCollected },
-                {"Time Played", timerTotalTime },
-                {"Player Position", playerPosition }
+                {"Checkpoints Collected", CheckpointsCollected },
+                {"Time Played", TimerTotalTime },
+                {"Player Position", PlayerPosition }
             });
-            gameState = true;
+            GameState = true;
         }
 
 
-        gameOverWinCanvas.SetActive(true);
+        GameOverWinCanvas.SetActive(true);
 
 
     }
@@ -81,16 +81,16 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("game over");
 
-        if (gameState == false)
+        if (GameState == false)
         {
             AnalyticsEvent.GameOver();
 
             Analytics.CustomEvent("Game Win", new Dictionary<string, object>{
-                {"Checkpoints Collected", checkpointsCollected },
-                {"Time Played", timerTotalTime },
-                {"Player Position", playerPosition },
+                {"Checkpoints Collected", CheckpointsCollected },
+                {"Time Played", TimerTotalTime },
+                {"Player Position", PlayerPosition },
             });
-            gameState = true;
+            GameState = true;
         }
 
 

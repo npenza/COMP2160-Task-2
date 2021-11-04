@@ -6,17 +6,12 @@ public class Checkpoint : MonoBehaviour
 {
     public Material Active;
     public Material Inactive;
-    public float checkPointTime;
-    public GameManager gManager;
+    public float CheckPointTime;
+    public GameManager GManager;
     public GameObject NextCheckpoint;
     public bool Check = false;
     public float ActiveTime;
 
-    private void Start()
-    {
-
-    }
-    // Update is called once per frame
     void Update()
     {
         Renderer Rend = GetComponent<Renderer>();
@@ -37,7 +32,7 @@ public class Checkpoint : MonoBehaviour
         {
             Check = false;
             NextCheckpoint.GetComponent<Checkpoint>().Check = true;
-            checkPointTime = gManager.GetComponent<GameManager>().timerTotalTime;
+            CheckPointTime = GManager.GetComponent<GameManager>().TimerTotalTime;
         }
     }
 }
