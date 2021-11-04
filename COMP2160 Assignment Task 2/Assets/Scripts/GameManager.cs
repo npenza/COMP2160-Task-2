@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
             GameOver();
         }
 
-        if (checkpointsCollected == 10)
+        if (checkpointsCollected == 11)
         {
             GameOver(true);
         }
