@@ -567,11 +567,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a814bc77e6124a2429902833170faec3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
+  Rb: {fileID: 0}
   Velocity: 10
   Rotation: 100
   MaxSpeed: 100
-  gameManager: {fileID: 874429110}
+  GameManager: {fileID: 0}
 --- !u!64 &75220962
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -599,8 +599,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurHealth: 100
-  smoke: {fileID: 0}
-  uiScript: {fileID: 1693598887}
+  Smoke: {fileID: 0}
+  UiScript: {fileID: 0}
 --- !u!1 &76250282 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 240a8942b2025724a8cf3ab4e31effa1,
@@ -999,7 +999,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 175807488}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 874429112}
+        m_TargetAssemblyTypeName: ReloadScene, Assembly-CSharp
+        m_MethodName: ResetScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &175807488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1058,10 +1070,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Active: {fileID: 2100000, guid: 14e628c38cb23dc4d96c518845fee983, type: 2}
   Inactive: {fileID: 2100000, guid: f3cb52b5be6d1dc43b95d2ebd193f810, type: 2}
-  checkPointTime: 0
-  gManager: {fileID: 0}
-  NextCheckpoint: {fileID: 0}
+  CheckPointTime: 0
+  GManager: {fileID: 0}
+  NextCheckpoint: {fileID: 897004252}
   Check: 0
+  ActiveTime: 0
 --- !u!4 &182240121 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4563618423675941701, guid: c25d22a6d1607934e81252e820fd76d7,
@@ -1363,7 +1376,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1238368863}
-  m_RootOrder: 20
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -1642,10 +1655,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Active: {fileID: 2100000, guid: 14e628c38cb23dc4d96c518845fee983, type: 2}
   Inactive: {fileID: 2100000, guid: f3cb52b5be6d1dc43b95d2ebd193f810, type: 2}
-  checkPointTime: 0
-  gManager: {fileID: 0}
+  CheckPointTime: 0
+  GManager: {fileID: 0}
   NextCheckpoint: {fileID: 1399351942}
   Check: 0
+  ActiveTime: 0
 --- !u!4 &347053294 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4563618423675941701, guid: c25d22a6d1607934e81252e820fd76d7,
@@ -2790,10 +2804,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Active: {fileID: 2100000, guid: 14e628c38cb23dc4d96c518845fee983, type: 2}
   Inactive: {fileID: 2100000, guid: f3cb52b5be6d1dc43b95d2ebd193f810, type: 2}
-  checkPointTime: 0
-  gManager: {fileID: 0}
+  CheckPointTime: 0
+  GManager: {fileID: 0}
   NextCheckpoint: {fileID: 1991226380}
   Check: 0
+  ActiveTime: 0
 --- !u!4 &573991010 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4563618423675941701, guid: c25d22a6d1607934e81252e820fd76d7,
@@ -2820,10 +2835,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Active: {fileID: 2100000, guid: 14e628c38cb23dc4d96c518845fee983, type: 2}
   Inactive: {fileID: 2100000, guid: f3cb52b5be6d1dc43b95d2ebd193f810, type: 2}
-  checkPointTime: 0
-  gManager: {fileID: 0}
+  CheckPointTime: 0
+  GManager: {fileID: 0}
   NextCheckpoint: {fileID: 182240116}
   Check: 0
+  ActiveTime: 0
 --- !u!4 &579890955 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4563618423675941701, guid: c25d22a6d1607934e81252e820fd76d7,
@@ -3180,7 +3196,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1238368863}
-  m_RootOrder: 16
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -3949,7 +3965,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1238368863}
-  m_RootOrder: 13
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -4828,14 +4844,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4851265d3e8f34d478f35f1901f16b64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverWinCanvas: {fileID: 1282367573}
-  player: {fileID: 75220957}
-  healthScript: {fileID: 0}
-  timerTotalTime: 0
-  checkpointsCollected: 0
-  playerPosition: {x: 0, y: 0, z: 0}
-  playerHealth: 0
-  gameState: 0
+  GameOverWinCanvas: {fileID: 0}
+  Player: {fileID: 0}
+  HealthScript: {fileID: 0}
+  TimerTotalTime: 0
+  CheckpointsCollected: 0
+  PlayerPosition: {x: 0, y: 0, z: 0}
+  PlayerHealth: 0
+  GameState: 0
 --- !u!4 &874429111
 Transform:
   m_ObjectHideFlags: 0
@@ -4993,10 +5009,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Active: {fileID: 2100000, guid: 14e628c38cb23dc4d96c518845fee983, type: 2}
   Inactive: {fileID: 2100000, guid: f3cb52b5be6d1dc43b95d2ebd193f810, type: 2}
-  checkPointTime: 0
-  gManager: {fileID: 874429110}
+  CheckPointTime: 0
+  GManager: {fileID: 0}
   NextCheckpoint: {fileID: 347053289}
   Check: 0
+  ActiveTime: 0
 --- !u!4 &897004257 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4563618423675941701, guid: c25d22a6d1607934e81252e820fd76d7,
@@ -5623,7 +5640,7 @@ PrefabInstance:
     - target: {fileID: 3230901708402435793, guid: c25d22a6d1607934e81252e820fd76d7,
         type: 3}
       propertyPath: m_Name
-      value: Checkpoint 10
+      value: Checkpoint 9
       objectReference: {fileID: 0}
     - target: {fileID: 3230901708402435793, guid: c25d22a6d1607934e81252e820fd76d7,
         type: 3}
@@ -6028,10 +6045,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Active: {fileID: 2100000, guid: 14e628c38cb23dc4d96c518845fee983, type: 2}
   Inactive: {fileID: 2100000, guid: f3cb52b5be6d1dc43b95d2ebd193f810, type: 2}
-  checkPointTime: 0
-  gManager: {fileID: 0}
+  CheckPointTime: 0
+  GManager: {fileID: 0}
   NextCheckpoint: {fileID: 1214149886}
   Check: 0
+  ActiveTime: 0
 --- !u!4 &1135188408 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4563618423675941701, guid: c25d22a6d1607934e81252e820fd76d7,
@@ -6048,7 +6066,7 @@ PrefabInstance:
     - target: {fileID: 3230901708402435793, guid: c25d22a6d1607934e81252e820fd76d7,
         type: 3}
       propertyPath: m_Name
-      value: Checkpoint 8
+      value: Checkpoint 7
       objectReference: {fileID: 0}
     - target: {fileID: 3230901708402435793, guid: c25d22a6d1607934e81252e820fd76d7,
         type: 3}
@@ -6755,10 +6773,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Active: {fileID: 2100000, guid: 14e628c38cb23dc4d96c518845fee983, type: 2}
   Inactive: {fileID: 2100000, guid: f3cb52b5be6d1dc43b95d2ebd193f810, type: 2}
-  checkPointTime: 0
-  gManager: {fileID: 0}
+  CheckPointTime: 0
+  GManager: {fileID: 0}
   NextCheckpoint: {fileID: 573991005}
   Check: 0
+  ActiveTime: 0
 --- !u!4 &1214149891 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4563618423675941701, guid: c25d22a6d1607934e81252e820fd76d7,
@@ -6994,7 +7013,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1238368863}
-  m_RootOrder: 17
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -7083,16 +7102,16 @@ RectTransform:
   - {fileID: 1245105652}
   - {fileID: 1120799046}
   - {fileID: 169591487}
-  - {fileID: 1755819255}
-  - {fileID: 1587470862}
-  - {fileID: 727232960}
-  - {fileID: 1911368700}
-  - {fileID: 1850824189}
   - {fileID: 676844464}
   - {fileID: 1238276592}
   - {fileID: 1921635892}
   - {fileID: 1628163955}
   - {fileID: 263142769}
+  - {fileID: 1755819255}
+  - {fileID: 1587470862}
+  - {fileID: 727232960}
+  - {fileID: 1911368700}
+  - {fileID: 1850824189}
   - {fileID: 175807486}
   m_Father: {fileID: 2073280423}
   m_RootOrder: 0
@@ -7805,10 +7824,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Active: {fileID: 2100000, guid: 14e628c38cb23dc4d96c518845fee983, type: 2}
   Inactive: {fileID: 2100000, guid: f3cb52b5be6d1dc43b95d2ebd193f810, type: 2}
-  checkPointTime: 0
-  gManager: {fileID: 0}
+  CheckPointTime: 0
+  GManager: {fileID: 0}
   NextCheckpoint: {fileID: 2065043584}
   Check: 0
+  ActiveTime: 0
 --- !u!4 &1399351947 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4563618423675941701, guid: c25d22a6d1607934e81252e820fd76d7,
@@ -9633,7 +9653,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1238368863}
-  m_RootOrder: 12
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -10216,7 +10236,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1238368863}
-  m_RootOrder: 19
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -10700,13 +10720,37 @@ MonoBehaviour:
   gameTime: 0
   displayTime: 0
   UITime: {fileID: 136209145}
-  cp1Time: {fileID: 1216281987}
-  cp2Time: {fileID: 1297835337}
-  cp1: {fileID: 897004252}
-  cp1Script: {fileID: 0}
-  cp2: {fileID: 347053289}
-  cp2Script: {fileID: 0}
-  scrollbar: {fileID: 685942369}
+  Cp1Time: {fileID: 0}
+  Cp2Time: {fileID: 0}
+  Cp3Time: {fileID: 0}
+  Cp4Time: {fileID: 0}
+  Cp5Time: {fileID: 0}
+  Cp6Time: {fileID: 0}
+  Cp7Time: {fileID: 0}
+  Cp8Time: {fileID: 0}
+  Cp9Time: {fileID: 0}
+  Cp10Time: {fileID: 0}
+  Cp1: {fileID: 0}
+  Cp1Script: {fileID: 0}
+  Cp2: {fileID: 0}
+  Cp2Script: {fileID: 0}
+  Cp3: {fileID: 0}
+  Cp3Script: {fileID: 0}
+  Cp4: {fileID: 0}
+  Cp4Script: {fileID: 0}
+  Cp5: {fileID: 0}
+  Cp5Script: {fileID: 0}
+  Cp6: {fileID: 0}
+  Cp6Script: {fileID: 0}
+  Cp7: {fileID: 0}
+  Cp7Script: {fileID: 0}
+  Cp8: {fileID: 0}
+  Cp8Script: {fileID: 0}
+  Cp9: {fileID: 0}
+  Cp9Script: {fileID: 0}
+  Cp10: {fileID: 0}
+  Cp10Script: {fileID: 0}
+  Scrollbar: {fileID: 0}
 --- !u!1001 &1729030256
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11006,7 +11050,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1238368863}
-  m_RootOrder: 11
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -11655,7 +11699,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1238368863}
-  m_RootOrder: 15
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -16883,7 +16927,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1238368863}
-  m_RootOrder: 14
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -16962,7 +17006,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1238368863}
-  m_RootOrder: 18
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -17125,10 +17169,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Active: {fileID: 2100000, guid: 14e628c38cb23dc4d96c518845fee983, type: 2}
   Inactive: {fileID: 2100000, guid: f3cb52b5be6d1dc43b95d2ebd193f810, type: 2}
-  checkPointTime: 0
-  gManager: {fileID: 0}
+  CheckPointTime: 0
+  GManager: {fileID: 0}
   NextCheckpoint: {fileID: 579890950}
   Check: 0
+  ActiveTime: 0
 --- !u!4 &1991226385 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4563618423675941701, guid: c25d22a6d1607934e81252e820fd76d7,
@@ -17976,7 +18021,7 @@ PrefabInstance:
     - target: {fileID: 3230901708402435793, guid: c25d22a6d1607934e81252e820fd76d7,
         type: 3}
       propertyPath: m_Name
-      value: Checkpoint 9
+      value: Checkpoint 8
       objectReference: {fileID: 0}
     - target: {fileID: 3230901708402435793, guid: c25d22a6d1607934e81252e820fd76d7,
         type: 3}
@@ -18332,10 +18377,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Active: {fileID: 2100000, guid: 14e628c38cb23dc4d96c518845fee983, type: 2}
   Inactive: {fileID: 2100000, guid: f3cb52b5be6d1dc43b95d2ebd193f810, type: 2}
-  checkPointTime: 0
-  gManager: {fileID: 0}
+  CheckPointTime: 0
+  GManager: {fileID: 0}
   NextCheckpoint: {fileID: 1135188403}
   Check: 0
+  ActiveTime: 0
 --- !u!4 &2065043589 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4563618423675941701, guid: c25d22a6d1607934e81252e820fd76d7,
